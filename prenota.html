@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenotazione Camera</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h2>Prenotazione Camera</h2>
+        <form action="prenota.php" method="post">
+            <div class="form-group">
+                <label for="cliente_cognome">Cognome Cliente:</label>
+                <input type="text" id="cliente_cognome" name="cliente_cognome" required>
+            </div>
+            <div class="form-group">
+                <label for="cliente_nome">Nome Cliente:</label>
+                <input type="text" id="cliente_nome" name="cliente_nome" required>
+            </div>
+            <div class="form-group">
+                <label for="tipologia_camera">Tipologia Camera:</label>
+                <select id="tipologia_camera" name="tipologia_camera" required>
+                    <option value="singola">Singola</option>
+                    <option value="doppia">Doppia</option>
+                    <option value="suite">Suite</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="data_checkin">Data Check-in:</label>
+                <input type="date" id="data_checkin" name="data_checkin" required>
+            </div>
+            <div class="form-group">
+                <label for="data_checkout">Data Check-out:</label>
+                <input type="date" id="data_checkout" name="data_checkout" required>
+            </div>
+            <input type="submit" value="Prenota">
+        </form>
+    </div>
+</body>
+</html>

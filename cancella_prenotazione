@@ -1,0 +1,15 @@
+<?php
+include 'db.php';
+
+function cancellaPrenotazione($id_prenotazione) {
+    global $conn;
+
+    $sql = "DELETE FROM Prenotazioni WHERE id = $id_prenotazione";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Prenotazione cancellata con successo!";
+    } else {
+        echo "Errore: " . $sql . "<br>" . $conn->error;
+    }
+}
+?>
