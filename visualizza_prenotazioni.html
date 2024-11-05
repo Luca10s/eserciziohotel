@@ -6,15 +6,21 @@
 </head>
 <body>
     <h1>Elenco Prenotazioni</h1>
-    <table>
-        <tr>
-            <th>Cognome</th>
-            <th>Nome</th>
-            <th>Tipologia Camera</th>
-            <th>Data Check-in</th>
-            <th>Data Check-out</th>
-        </tr>
-        <form action="visualizza_prenotazioni.php" method="get"></form>
-    </table>
+    <div id="prenotazioni"></div>
+
+    <script>
+        function caricaPrenotazioni() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "visualizza_prenotazioni.php", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("prenotazioni").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+
+        window.onload = caricaPrenotazioni;
+    </script>
 </body>
 </html>
